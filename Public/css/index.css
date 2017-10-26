@@ -1179,11 +1179,31 @@
 		height: 34px;
 		line-height: 34px;
 		text-align: center;
+		padding-right: 10px;
 		position: absolute;
 		left: -90px;
 	}
 	.post-wrapper .form-post .post-list .list-icon {background:#fff url(../images/detail/step.png) no-repeat;}
 	.post-wrapper .form-post .post-list .end-icon {left: -64px;top: -30px;}
+	.post-wrapper .form-post .post-list .list-icon.icon1.fixed {
+		position: fixed;
+		z-index: 100;
+		margin-left: 212px;
+		top: 0;
+		/*left: 0;*/
+	}
+	.post-wrapper .form-post .post-list .list-icon.icon2.fixed {
+		position: fixed;
+		z-index: 100;
+		margin-left: 212px;
+		top: 44px;
+	}
+	.post-wrapper .form-post .post-list .list-icon.icon3.fixed {
+		position: fixed;
+		z-index: 100;
+		margin-left: 212px;
+		top: 98px;
+	}
 	.post-wrapper .form-post .form-group {
 		padding-top: 15px;
 	}

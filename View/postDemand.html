@@ -135,7 +135,7 @@
 		<form action="javascript:;" method="post" class="form-post" id="formPost" name="formPost" >
 			<div class="post-panel">
 				<div class="post-list clearfix" style="padding-top: 0;">
-					<div class="list-icon">基础需求</div>
+					<div class="list-icon icon1 fixed">基础需求</div>
 					<div class="post-part1">
 						<div class="form-group">  <!-- 1.需求区域 -->
 							<label for="" class="control-label col-md-2"><strong class="high">*</strong>需求区域</label>
@@ -189,7 +189,7 @@
 					</div>
 				</div>
 				<div class="post-list clearfix">
-					<div class="list-icon">仓库要求</div>
+					<div class="list-icon icon2">仓库要求</div>
 					<div class="post-part2">
 						<div class="form-group">   <!-- 6.类型要求 -->
 							<label for="" class="control-label col-md-2"><strong class="high">*</strong>类型要求</label>
@@ -295,7 +295,7 @@
 					</div>
 				</div>
 				<div class="post-list clearfix">
-					<div class="list-icon">联系方式</div>
+					<div class="list-icon icon3">联系方式</div>
 					<div class="post-part3">
 						<div class="form-group sex-group">   <!-- 10.联系人 -->
 							<label for="name" class="control-label col-md-2"><strong class="high">*</strong>联系人</label>
@@ -356,235 +356,28 @@
             format: 'yyyy-mm-dd'
         });
     });
-		$(function(){
-			var token = '{$token}';
-			$("#btnPost").validate({
-				// onkeyup: false,
-				rules: {
-					mobile: {
-						required: true,
-						isValidMobile: true,
-						isExistsMobile: true
-					},
-					code:{
-						required:true,
-					},
-					smscode: {
-						required: true,
-						checkSmsCode: true
-					},					
-					password: {
-						required: true,
-						minlength: 6
-					},
-					repassword: {
-						required: true,
-						equalTo: "#password"
-					}
-				},
-				messages: {
-					mobile: {
-						required: "手机号不能为空",
-						isValidMobile: "手机号格式无效",
-						isExistsMobile: "该手机号已存在不可注册"
-					},
-					code: {
-						required: "验证码不能为空",
-					},
-					smscode: {
-						required: "短信验证码不能为空",
-						checkSmsCode: "验证码不正确或已过期"
-					},					
-					password: {
-						required: "密码不能为空",
-						minlength: "密码至少6个字符"
-					},
-					repassword: {
-						required: "再次输入密码",
-						equalTo: "两次密码不一致"
-					}
-				},
-				errorPlacement: function(error, element, params) {
-					if (element.attr('name') == "accept") {
-						error.appendTo($(".main-msg"));
-					} else if (element.attr('name') == 'mobile') {
-						error.appendTo(element.parent('div'));
-					} else {
-						error.appendTo(element.parent("div"));
-					}
-
-				},
-				submitHandler: function(form) {
-					var v = $("input[name=accept]:checked").size();
-					if (v == 0) {
-						BootstrapDialog.alert({
-							type: BootstrapDialog.TYPE_DEFAULT,
-							title: "温馨提示",
-							message: "您是否阅读并同意用户服务协议?",
-							buttonLabel: "确定"
-						});
-						return false;
-					} else {
-						var obj = new Object();
-						obj.username = $.trim($("#username").val());
-						obj.password = $.trim($("#password").val());
-						obj.repassword = $.trim($("#repassword").val());
-						obj.mobile = $.trim($("#mobile").val());
-						obj.code = $.trim($("#code").val());
-						obj.smscode = $.trim($("#smscode").val());
-						$.ajax({
-							url: "",
-							data: obj,
-							type: "post",
-							success: function(ret) {
-								if (ret.status == 1) {
-									alt(ret.data, function() {
-                                //window.location.href = $("#backurl").val();
-                                window.location.href = ""
-                            })
-								} else {
-									BootstrapDialog.alert({
-										type: BootstrapDialog.TYPE_DEFAULT,
-										title: "温馨提示",
-										message: ret.error,
-										buttonLabel: "确定"
-									});
-								}
-							}
-						});
-					}
-					return false;
-				}
-			});
-			$.validator.addMethod("isValidMobile", function(value, element, params) {
-				var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
-				if (!reg.test(value)) {
-					return false;
-				} else {
-					return true;
-				}
-			});
-			$.validator.addMethod("isValidUser", function(value, element, params) {
-				var reg = /^[a-zA-Z][a-zA-Z0-9_]{4,12}$/;
-				if (reg.test(value))
-					return true;
-				else
-					return false;
-			});
-			$.validator.addMethod("isExistsUser", function(value, element, params) {
-				var v = $.ajax({
-					url: "",
-					type: "post",
-					data: {
-						flag: "user",
-						value: value
-					},
-					async: false
-				}).responseText;
-				if (v == '1')
-					return true;
-				else
-					return false;
-			});
-			$.validator.addMethod("isExistsMobile", function(value, element, params) {
-				var v = $.ajax({
-					url: "",
-					type: "post",
-					data: {
-						flag: "mobile",
-						value: value
-					},
-					async: false
-				}).responseText;
-				if (v == "1")
-					return true;
-				else
-					return false;
-			});
-			$.validator.addMethod("checkSmsCode", function(value, element, params) {
-				var v = $.ajax({
-					url: "",
-					type: "post",
-					data: {
-						code: value
-					},
-					async: false
-				}).responseText;
-				if (v == "1")
-					return true;
-				else
-					return false;
-			});
-
-			$("#getCode").click(function() {
-				var v = $.trim($("#mobile").val());
-				var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
-				if (v == "") {
-					return false;
-				} else if (!reg.test(v)) {
-					BootstrapDialog.alert({
-						type: BootstrapDialog.TYPE_DEFAULT,
-						title: "温馨提示",
-						message: "请检查手机号是否有问题",
-						buttonLabel: "确定"
-					});
-				} else {
-					$("#getCode").attr('disabled', true);
-					$.ajax({
-						url: "",
-						data: {
-							flag: '{$token}',
-							mobile: $("#mobile").val().trim()
-						},
-						type: "post",
-						success: function(ret) {
-							if (ret == '1') {
-								setJs();
-							}
-						}
-					});
-				}
-			});		
-			function setJs(){
-
-				var id = window.setInterval(function(){
-
-					var v = parseInt($("#mz").val())-1;
-
-					if(v>0){
-
-						$("#mz").val(v);
-
-						$("#getCode").text(v+"s后继续");
-
-					}
-
-					else
-
-					{
-
-						window.clearInterval(id);
-
-						$("#getCode").text("获取验证码");
-
-						var mobile = $("#mobile").val();
-
-						var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
-
-						if(reg.test(mobile)){
-
-							$("#getCode").attr('disabled',false);
-
-						}
-
-					}
-
-
-
-				},1000);
-
-			}
-		})
+$(function(){
+	var icon1Top = $(".post-list .icon1").offset().top;
+	var icon2Top = $(".post-list .icon2").offset().top;
+	var icon3Top = $(".post-list .icon3").offset().top;
+		$(window).scroll(function(){
+			if($(window).scrollTop() > icon1Top){
+				$(".post-list .icon1").addClass("fixed");
+			} else {
+				$(".post-list .icon1").removeClass("fixed");
+			};
+			if($(window).scrollTop() > icon2Top){
+				$(".post-list .icon2").addClass("fixed");
+			} else {
+				$(".post-list .icon2").removeClass("fixed");
+			};
+			if($(window).scrollTop() > icon3Top){
+				$(".post-list .icon3").addClass("fixed");
+			} else {
+				$(".post-list .icon3").removeClass("fixed");
+			};
+		});
+})
 </script>
 </body>
 </html>
