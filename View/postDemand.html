@@ -135,7 +135,7 @@
 		<form action="javascript:;" method="post" class="form-post" id="formPost" name="formPost" >
 			<div class="post-panel">
 				<div class="post-list clearfix" style="padding-top: 0;">
-					<div class="list-icon l90 icon1 fixed">基础需求</div>
+					<div class="list-icon l90 icon1">基础需求</div>
 					<div class="post-part1">
 						<div class="form-group">  <!-- 1.需求区域 -->
 							<label for="" class="control-label col-md-2"><strong class="high">*</strong>需求区域</label>
@@ -356,41 +356,6 @@
             format: 'yyyy-mm-dd'
         });
     });
-$(function(){
-	var icon1Top = $(".post-list .icon1").offset().top;
-	var icon2Top = $(".post-list .icon2").offset().top;
-	var icon3Top = $(".post-list .icon3").offset().top;
-	var icon4Top = $(".post-list .icon4").offset().top;
-	var listIcon = $(".post-wrapper .form-post .post-list .list-icon");
-	var endIcon = $(".post-wrapper .form-post .post-list .end-icon");
-		$(window).scroll(function(){
-			if($(window).scrollTop() > icon1Top){
-				listIcon.removeClass("l90");
-				$(".post-list .icon1").addClass("fixed");
-			} else {
-				listIcon.addClass("l90");
-				$(".post-list .icon1").removeClass("fixed");
-			};
-			if($(window).scrollTop() > icon2Top){
-				listIcon.removeClass("l90");
-				// endIcon.removeClass("l64");
-				$(".post-list .icon2").addClass("fixed");
-				$(".post-list .icon3").addClass("fixed");
-				$(".post-list .icon4").addClass("fixed");
-			} else {
-				listIcon.addClass("l90");
-				// endIcon.addClass("l64");
-				$(".post-list .icon2").removeClass("fixed");
-				$(".post-list .icon3").removeClass("fixed");
-				$(".post-list .icon4").removeClass("fixed");
-			};
-			// if($(window).scrollTop() > icon3Top){
-			// 	$(".post-list .icon3").addClass("fixed");
-			// } else {
-			// 	$(".post-list .icon3").removeClass("fixed");
-			// };
-		});
-})
 </script>
 </body>
 </html>

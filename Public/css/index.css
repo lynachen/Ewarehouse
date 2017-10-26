@@ -78,8 +78,8 @@
 	    	text-align: center;
 	    }
 	    .toast-top-full-width {
-	    	top: 45%;
-	    	right: 50%;
+	    	top: 10%;
+	    	right: 55%;
 	    	width: 290px;
 	    	height: 24px;
 	    	line-height: 24px;
@@ -1243,6 +1243,7 @@
 		border: 1px solid #ccc;
 		border-radius: 0;
 		background-color: #fff;	
+		text-align: center;
 	}
 	.post-wrapper .form-post .form-group .size-estimate {
 		color: #1a75ff;
@@ -1266,6 +1267,8 @@
 		border:1px solid #ccc;
 		font-size: 14px;
 		color: #ccc;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 	.post-part3 .sex-group input[type=radio]{
 		margin-right: 6px;
