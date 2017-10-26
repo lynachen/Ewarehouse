@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="shortcut icon" href="../Public/images/index/logo.ico" type="image/x-icon" />
+	<title>E云仓详情页</title>
+	<link rel="stylesheet" href="../Public/components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Public/components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../Public/components/datepicker/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="../Public/css/index.css">
+	<script src="../Public/components/jQuery/dist/jquery.min.js"></script>
+	<script src="../Public/components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../Public/components/validate/jquery.validate.min.js"></script>
+	<script src="../Public/components/dialog/js/bootstrap-dialog.min.js"></script>
+	<script src="../Public/js/base.js"></script>
+</head>
+<body>
+	<!-- top部分 -->
+	<div class="top clearfix">
+		<div class="container clearfix">
+			<div class="top-left">
+				<span>易电联首页</span>
+			</div>
+			<div class="pull-right">
+				<ul class="list-inline top-right">
+					<!-- <li><a href="#" class="">我是供应商</span></li> -->
+					<div class="log">	
+						欢迎您！					
+						<a class="loginusername" href="#"></a>						
+						<a class="logout" href="#">安全退出</a>
+					</div>
+					<div class="logno">
+						<li><a href="#" class="login on">登录</a></li>
+						<span class="divider"></span>
+						<li><a href="#" class="register">注册</a></li>
+					</div>			
+					<li class="help-center"><a href="#" class="one-level">帮助中心 <i class="fa fa-angle-down"></i></a>
+						<ul class="list-unstyled two-level">
+							<li><a href="#">常见问题</a></li>
+							<li><a href="#">交易指南</a></li>
+							<li><a href="#">投诉建议</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- search部分 -->
+	<div style="background-color:#fff;padding-bottom:40px;padding-top:40px;">
+		<div class="container">
+			<a href="#" class="logo"><img src="../Public/images/index/logo.png"></a>
+			<div class="search-box">
+				<form method="#" class="search-head form-inline" action="#">
+					<input type="search" class="" placeholder="请输入产品名称" value="" />
+					<i class="fa fa-search"></i>
+					<a class="btn-search">搜索</a>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- nav部分 -->
+	<div class="nav">
+		<div class="container nav-items">
+			<ul class="list-inline left-ul">
+				<li class="nav-all"><a href="" class="">全部租仓面积&nbsp;108,007,090m²</a>
+					<ul class="nav-float-ul">
+						<h1>找仓库</h1>
+						<li>
+							<dl class="nav-category">
+								<dt>地区</dt>
+								<dd>
+									<a href="#" class="on">北京市</a>
+									<a href="#">天津市</a>
+									<a href="#">上海市</a><br />
+									<a href="#">重庆市</a>
+									<a href="#">成都市</a>
+									<a href="#">更多</a>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl class="nav-category">
+								<dt>仓库类型</dt>
+								<dd>
+									<a href="#" class="on">普通仓</a>
+									<a href="#">恒温仓</a>
+									<a href="#">温控仓</a><br />
+									<a href="#">堆场</a>
+									<a href="#">危险品库</a>
+									<a href="#">其他</a>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl class="nav-category">
+								<dt>仓库模式</dt>
+								<dd>
+									<a href="#" class="on">平仓</a>
+									<a href="#">高台仓</a>
+									<a href="#">楼库</a><br />
+									<a href="#">地下仓库</a>
+									<a href="#">立体库</a>
+									<a href="#">其他</a>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl class="nav-category">
+								<dt>可租面积</dt>
+								<dd>
+									<a href="#" class="on">不限</a>
+									<a href="#">&lt;1000m²</a>
+									<a href="#">1000~5000m²</a>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="list-inline right-ul">
+				<li class="nav-one"><a href="#">首页</a></li>
+				<li class="nav-two"><a href="#">搜索仓库</a></li>
+				<li class="nav-three"><a href="#">发布租仓</a></li>
+			</ul>
+		</div>
+	</div>	
+	<!-- 流程背景图 -->
+	<div class="container step-bg"></div>
+	<div class="container post-wrapper">
+		<form action="javascript:;" method="post" class="form-post" id="formPost" name="formPost" >
+			<div class="post-panel">
+				<div class="post-list clearfix" style="padding-top: 0;">
+					<div class="list-icon">基础需求</div>
+					<div class="post-part1">
+						<div class="form-group">  <!-- 1.需求区域 -->
+							<label for="" class="control-label col-md-2"><strong class="high">*</strong>需求区域</label>
+							<div class="input-group area-group">
+								<select class="form-control" id="province" name="province"></select>
+								<select class="form-control" id="city" name="city"></select>
+								<select class="form-control" id="area" name="area"></select>
+							</div>
+						</div>
+						<div class="form-group">   <!-- 2.需求面积 -->
+							<label for="size" class="control-label col-md-2"><strong class="high">*</strong>需求面积</label>
+							<input type="text" id="size1" class="size" placeholder="" maxlength="5" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" oninput="if(value.length>5)value=value.slice(0,5)">
+							-
+							<input type="text" id="size2" class="size" placeholder="" maxlength="5" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" oninput="if(value.length>5)value=value.slice(0,5)" style="margin-right: 5px;">m²
+							<span class="size-estimate">如何估算需求面积</span>
+						</div>
+						<div class="form-group">  <!-- 3.预计入仓 -->
+							<label for="date" class="control-label col-md-2"><strong class="high">*</strong>预计入仓</label>
+							<input type="text" id="date" class="date" placeholder="请选择" readonly>							
+						</div> 
+						<div class="form-group">   <!-- 4.计划租期 -->
+							<label for="period" class="control-label col-md-2"><strong class="high">*</strong>计划租期</label>
+							<div class="input-group period-group">								
+								<label for="periodChoice1">
+									<input type="radio" id="periodChoice1" name="period" value="一年以内">一年以内
+								</label>								
+								<label for="periodChoice2">
+									<input type="radio" id="periodChoice2" name="period" value="一年~三年">一年~三年
+								</label>
+								<label for="periodChoice3">
+									<input type="radio" id="periodChoice3" name="period" value="三年以上">三年以上
+								</label>										
+							</div>				
+						</div>
+						<div class="form-group">  <!-- 5.货品类型 -->
+							<label for="category" class="control-label col-md-2"><strong class="high">*</strong>货品类型</label>
+							<div class="input-group type-group">
+								<label for="category1">
+									<input type="checkbox" id="category1" value="">大家电及配件
+								</label>
+								
+								<label for="category2">
+									<input type="checkbox" id="category2" value="">小家电及配件
+								</label>
+								
+								<label for="category3">
+									<input type="checkbox" id="category3" value="">3C产品
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="post-list clearfix">
+					<div class="list-icon">仓库要求</div>
+					<div class="post-part2">
+						<div class="form-group">   <!-- 6.类型要求 -->
+							<label for="" class="control-label col-md-2"><strong class="high">*</strong>类型要求</label>
+							<div class="input-group type-group">
+								<label for="typeChoice1">
+									<input type="radio" id="typeChoice1" name="typeChoice" value="">普通仓
+								</label>								
+								<label for="typeChoice2">
+									<input type="radio" id="typeChoice2" name="typeChoice" value="">冷库
+								</label>
+								<label for="typeChoice3">
+									<input type="radio" id="typeChoice3" name="typeChoice" value="">气调库
+								</label>
+								<label for="typeChoice1">
+									<input type="radio" id="typeChoice4" name="typeChoice" value="">恒温库
+								</label>								
+								<label for="typeChoice2">
+									<input type="radio" id="typeChoice5" name="typeChoice" value="">冷库露天堆场
+								</label>
+								<label for="typeChoice3">
+									<input type="radio" id="typeChoice6" name="typeChoice" value="">有朋堆场
+								</label>
+								<label for="typeChoice1">
+									<input type="radio" id="typeChoice7" name="typeChoice" value="">危险品库
+								</label>								
+								<label for="typeChoice2">
+									<input type="radio" id="typeChoice8" name="typeChoice" value="">其他
+								</label>
+							</div>
+						</div>
+						<div class="form-group">  <!-- 7.模式要求 -->
+							<label for="" class="control-label col-md-2"><strong class="high">*</strong>模式要求</label>
+							<div class="input-group type-group">
+								<label for="modeChoice1">
+									<input type="radio" id="modeChoice1" name="modeChoice" value="">平库
+								</label>								
+								<label for="modeChoice2">
+									<input type="radio" id="modeChoice2" name="modeChoice" value="">高台库
+								</label>
+								<label for="modeChoice3">
+									<input type="radio" id="modeChoice3" name="modeChoice" value="">楼库
+								</label>
+								<label for="modeChoice1">
+									<input type="radio" id="typeChoice4" name="typeChoice" value="">地下仓库
+								</label>								
+								<label for="modeChoice2">
+									<input type="radio" id="modeChoice5" name="modeChoice" value="">立体库
+								</label>
+								<label for="modeChoice3">
+									<input type="radio" id="modeChoice6" name="modeChoice" value="">其他
+								</label>
+							</div>
+						</div>
+						<div class="form-group">   <!-- 8.服务要求 -->
+							<label for="" class="control-label col-md-2"><strong class="high">*</strong>服务要求</label>
+							<div class="input-group type-group">
+								<label for="serviceChoice1">
+									<input type="checkbox" id="serviceChoice1" value="">装卸
+								</label>								
+								<label for="serviceChoice2">
+									<input type="checkbox" id="serviceChoice2" value="">运输
+								</label>								
+								<label for="serviceChoice3">
+									<input type="checkbox" id="serviceChoice3" value="">代发
+								</label>
+								<label for="serviceChoice4">
+									<input type="checkbox" id="serviceChoice4" value="">库内作业
+								</label>								
+								<label for="serviceChoice5">
+									<input type="checkbox" id="serviceChoice5" value="">配送
+								</label>								
+								<label for="serviceChoice6">
+									<input type="checkbox" id="serviceChoice6" value="">代管
+								</label>
+								<label for="serviceChoice7">
+									<input type="checkbox" id="serviceChoice7" value="">金融监管
+								</label>								
+								<label for="serviceChoice8">
+									<input type="checkbox" id="serviceChoice8" value="">报关商检
+								</label>
+							</div>
+						</div>
+						<div class="form-group">  <!-- 9.软件服务 -->
+							<label for="" class="control-label col-md-2"><strong class="high">*</strong>软件服务</label>
+							<div class="input-group type-group">
+								<label for="softwareChoice1">
+									<input type="checkbox" id="softwareChoice1" value="">仓库管理系统（WMS）
+								</label>								
+								<label for="softwareChoice2">
+									<input type="checkbox" id="softwareChoice2" value="">运输管理系统（TMS）
+								</label>								
+								<label for="softwareChoice3">
+									<input type="checkbox" id="softwareChoice3" value="">办公管理系统（OA）
+								</label>
+								<label for="softwareChoice4">
+									<input type="checkbox" id="softwareChoice4" value="">电商管理系统（OA）
+								</label>								
+								<label for="softwareChoice5">
+									<input type="checkbox" id="softwareChoice5" value="">订单管理系统（OMS）
+								</label>								
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="post-list clearfix">
+					<div class="list-icon">联系方式</div>
+					<div class="post-part3">
+						<div class="form-group sex-group">   <!-- 10.联系人 -->
+							<label for="name" class="control-label col-md-2"><strong class="high">*</strong>联系人</label>
+							<input type="text" placeholder="" id="name">
+							<label for="male">
+								<input type="radio" name="sex" value="male" id="male">先生
+							</label>							  
+							<label for="female">
+								<input type="radio" name="sex" value="female" id="female">女士
+							</label>							
+						</div>	
+						<div class="form-group">  <!-- 11.联系电话 -->
+							<label for="mobile" class="control-label col-md-2"><strong class="high">*</strong>联系电话</label>
+							<input type="text" placeholder="" id="mobile">							
+						</div>
+						<div class="form-group">
+							<label for="email" class="control-label col-md-2" style="padding-left: 10px;">联系邮箱</label>
+							<input type="text" placeholder="" id="email">						
+						</div>					
+					</div>
+				</div>
+				<div class="post-list" style="padding-top: 0;border-left: 0;">
+					<div class="end-icon">End</div>
+					<div class="btn-area">
+						<button type="submit" class="btn btn-primary btn-post" id="btnPost">发布需求</button>
+					</div>					
+				</div>
+			</div>
+		</form>		
+	</div>
+
+
+
+	<!-- footer部分 -->
+<script src="../Public/js/PCASClass.js"></script>
+<script src="../Public/components/datepicker/js/bootstrap-datetimepicker.js"></script>
+<script src="../Public/components/datepicker/js/locales/bootstrap-datetimepicker.zh-CN.js"></script>
+<script src="../Public/components/jQuery/dist/moment.min.js"></script>
+<script>
+	/*地区插件*/
+	$(function () {
+		new PCAS("province", "city", "area");
+	}) 
+    /*时间插件*/
+    $(function () {
+        $('#date').datetimepicker({
+            bootcssVer:3,
+            language: 'zh-CN',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 2,
+            forceParse: 0,
+            showMeridian: 1,
+            minView: "month",
+            pickerPosition: "bottom-right",
+            format: 'yyyy-mm-dd'
+        });
+    });
+		$(function(){
+			var token = '{$token}';
+			$("#btnPost").validate({
+				// onkeyup: false,
+				rules: {
+					mobile: {
+						required: true,
+						isValidMobile: true,
+						isExistsMobile: true
+					},
+					code:{
+						required:true,
+					},
+					smscode: {
+						required: true,
+						checkSmsCode: true
+					},					
+					password: {
+						required: true,
+						minlength: 6
+					},
+					repassword: {
+						required: true,
+						equalTo: "#password"
+					}
+				},
+				messages: {
+					mobile: {
+						required: "手机号不能为空",
+						isValidMobile: "手机号格式无效",
+						isExistsMobile: "该手机号已存在不可注册"
+					},
+					code: {
+						required: "验证码不能为空",
+					},
+					smscode: {
+						required: "短信验证码不能为空",
+						checkSmsCode: "验证码不正确或已过期"
+					},					
+					password: {
+						required: "密码不能为空",
+						minlength: "密码至少6个字符"
+					},
+					repassword: {
+						required: "再次输入密码",
+						equalTo: "两次密码不一致"
+					}
+				},
+				errorPlacement: function(error, element, params) {
+					if (element.attr('name') == "accept") {
+						error.appendTo($(".main-msg"));
+					} else if (element.attr('name') == 'mobile') {
+						error.appendTo(element.parent('div'));
+					} else {
+						error.appendTo(element.parent("div"));
+					}
+
+				},
+				submitHandler: function(form) {
+					var v = $("input[name=accept]:checked").size();
+					if (v == 0) {
+						BootstrapDialog.alert({
+							type: BootstrapDialog.TYPE_DEFAULT,
+							title: "温馨提示",
+							message: "您是否阅读并同意用户服务协议?",
+							buttonLabel: "确定"
+						});
+						return false;
+					} else {
+						var obj = new Object();
+						obj.username = $.trim($("#username").val());
+						obj.password = $.trim($("#password").val());
+						obj.repassword = $.trim($("#repassword").val());
+						obj.mobile = $.trim($("#mobile").val());
+						obj.code = $.trim($("#code").val());
+						obj.smscode = $.trim($("#smscode").val());
+						$.ajax({
+							url: "",
+							data: obj,
+							type: "post",
+							success: function(ret) {
+								if (ret.status == 1) {
+									alt(ret.data, function() {
+                                //window.location.href = $("#backurl").val();
+                                window.location.href = ""
+                            })
+								} else {
+									BootstrapDialog.alert({
+										type: BootstrapDialog.TYPE_DEFAULT,
+										title: "温馨提示",
+										message: ret.error,
+										buttonLabel: "确定"
+									});
+								}
+							}
+						});
+					}
+					return false;
+				}
+			});
+			$.validator.addMethod("isValidMobile", function(value, element, params) {
+				var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+				if (!reg.test(value)) {
+					return false;
+				} else {
+					return true;
+				}
+			});
+			$.validator.addMethod("isValidUser", function(value, element, params) {
+				var reg = /^[a-zA-Z][a-zA-Z0-9_]{4,12}$/;
+				if (reg.test(value))
+					return true;
+				else
+					return false;
+			});
+			$.validator.addMethod("isExistsUser", function(value, element, params) {
+				var v = $.ajax({
+					url: "",
+					type: "post",
+					data: {
+						flag: "user",
+						value: value
+					},
+					async: false
+				}).responseText;
+				if (v == '1')
+					return true;
+				else
+					return false;
+			});
+			$.validator.addMethod("isExistsMobile", function(value, element, params) {
+				var v = $.ajax({
+					url: "",
+					type: "post",
+					data: {
+						flag: "mobile",
+						value: value
+					},
+					async: false
+				}).responseText;
+				if (v == "1")
+					return true;
+				else
+					return false;
+			});
+			$.validator.addMethod("checkSmsCode", function(value, element, params) {
+				var v = $.ajax({
+					url: "",
+					type: "post",
+					data: {
+						code: value
+					},
+					async: false
+				}).responseText;
+				if (v == "1")
+					return true;
+				else
+					return false;
+			});
+
+			$("#getCode").click(function() {
+				var v = $.trim($("#mobile").val());
+				var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+				if (v == "") {
+					return false;
+				} else if (!reg.test(v)) {
+					BootstrapDialog.alert({
+						type: BootstrapDialog.TYPE_DEFAULT,
+						title: "温馨提示",
+						message: "请检查手机号是否有问题",
+						buttonLabel: "确定"
+					});
+				} else {
+					$("#getCode").attr('disabled', true);
+					$.ajax({
+						url: "",
+						data: {
+							flag: '{$token}',
+							mobile: $("#mobile").val().trim()
+						},
+						type: "post",
+						success: function(ret) {
+							if (ret == '1') {
+								setJs();
+							}
+						}
+					});
+				}
+			});		
+			function setJs(){
+
+				var id = window.setInterval(function(){
+
+					var v = parseInt($("#mz").val())-1;
+
+					if(v>0){
+
+						$("#mz").val(v);
+
+						$("#getCode").text(v+"s后继续");
+
+					}
+
+					else
+
+					{
+
+						window.clearInterval(id);
+
+						$("#getCode").text("获取验证码");
+
+						var mobile = $("#mobile").val();
+
+						var reg = /^0?1[3|4|5|7|8][0-9]\d{8}$/;
+
+						if(reg.test(mobile)){
+
+							$("#getCode").attr('disabled',false);
+
+						}
+
+					}
+
+
+
+				},1000);
+
+			}
+		})
+</script>
+</body>
+</html>

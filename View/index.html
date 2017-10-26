@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="shortcut icon" href="../Public/images/index/logo.ico" type="image/x-icon" />
+	<title>E云仓首页</title>
+	<link rel="stylesheet" href="../Public/components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Public/components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../Public/css/index.css">
+	<script src="../Public/components/jQuery/dist/jquery.min.js"></script>
+	<script src="../Public/components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../Public/components/validate/jquery.validate.min.js"></script>
+	<script src="../Public/components/dialog/js/bootstrap-dialog.min.js"></script>
+	<script src="../Public/js/base.js"></script>
+</head>
+<body>
+	<!-- top部分 -->
+	<div class="top clearfix">
+		<div class="container clearfix">
+			<div class="top-left">
+				<span>易电联首页</span>
+			</div>
+			<div class="pull-right">
+				<ul class="list-inline top-right">
+					<!-- <li><a href="#" class="">我是供应商</a></li> -->
+					<div class="log">	
+						欢迎您！					
+						<a class="loginusername" href="#"></a>						
+						<a class="logout" href="#">安全退出</a>
+					</div>
+					<div class="logno">
+						<li><a href="#" class="login on">登录</a></li>
+						<span class="divider"></span>
+						<li><a href="#" class="register">注册</a></li>
+					</div>			
+					<li class="help-center"><a href="#" class="one-level">帮助中心 <i class="fa fa-angle-down"></i></a>
+						<ul class="list-unstyled two-level">
+							<li><a href="#">常见问题</a></li>
+							<li><a href="#">交易指南</a></li>
+							<li><a href="#">投诉建议</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- search部分 -->
+	<div style="background-color:#fff;padding-bottom:40px;padding-top:40px;">
+		<div class="container">
+			<a href="#" class="logo"><img src="../Public/images/index/logo.png"></a>
+			<div class="search-box">
+				<form method="#" class="search-head form-inline" action="#">
+					<input type="search" class="" placeholder="请输入产品名称" value="" />
+					<i class="fa fa-search"></i>
+					<a class="btn-search">搜索</a>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- nav部分 -->
+	<div class="nav">
+		<div class="container nav-items">
+			<ul class="list-inline left-ul">
+				<li class="nav-all"><a href="" class="">全部租仓面积&nbsp;108,007,090m²</a>
+					<ul class="nav-float-ul">
+						<h1>找仓库</h1>
+						<li>
+							<dl class="nav-category">
+								<dt>地区</dt>
+								<dd>
+									<a href="#" class="on">北京市</a>
+									<a href="#">天津市</a>
+									<a href="#">上海市</a><br />
+									<a href="#">重庆市</a>
+									<a href="#">成都市</a>
+									<a href="#">更多</a>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl class="nav-category">
+								<dt>仓库类型</dt>
+								<dd>
+									<a href="#" class="on">普通仓</a>
+									<a href="#">恒温仓</a>
+									<a href="#">温控仓</a><br />
+									<a href="#">堆场</a>
+									<a href="#">危险品库</a>
+									<a href="#">其他</a>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl class="nav-category">
+								<dt>仓库模式</dt>
+								<dd>
+									<a href="#" class="on">平仓</a>
+									<a href="#">高台仓</a>
+									<a href="#">楼库</a><br />
+									<a href="#">地下仓库</a>
+									<a href="#">立体库</a>
+									<a href="#">其他</a>
+								</dd>
+							</dl>
+						</li>
+						<li>
+							<dl class="nav-category">
+								<dt>可租面积</dt>
+								<dd>
+									<a href="#" class="on">不限</a>
+									<a href="#">&lt;1000m²</a>
+									<a href="#">1000~5000m²</a>
+								</dd>
+							</dl>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<ul class="list-inline right-ul">
+				<li class="nav-one"><a href="#">首页</a></li>
+				<li class="nav-two"><a href="#">搜索仓库</a></li>
+				<li class="nav-three"><a href="#">发布租仓</a></li>
+			</ul>
+		</div>
+	</div>	
+
+	<!--  轮播图 -->       
+	<div id="myCarousel" class="carousel slide">
+		<ol class="carousel-indicators">
+			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+			<li data-target="#myCarousel" data-slide-to="1"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="item active b1"></div>
+			<div class="item b2"></div>
+		</div>
+	</div>
+	<!-- content -->
+	<!--  仓储服务 -->
+	<div class="container content-box">
+		<h1>仓储服务</h1>
+		<div class="pro1-box row">
+			<div class="col-md-3 pro-left">
+				<h2>近期发布仓库</h2>
+				<div class="warehouse-list">
+					<div class="wareh-item">
+						<div class="wareh-top">
+							<a href="#">【北京市】北京黄埔开发区开创大道电商仓库库库库库</a>
+						</div>
+						<div class="wareh-center clearfix">
+							<span class="wareh-l">面积<i>2000</i>m²</span>
+							<span class="wareh-r"><i>33.50</i>元/m²（月）</span>
+						</div>
+						<div class="wareh-bottom clearfix">
+							<span class="wareh-l">广东-北京市-黄浦区</span>
+							<span class="wareh-r">2017-01-01</span>
+						</div>
+					</div>
+					<div class="wareh-item">
+						<div class="wareh-top">
+							<a href="#">【北京市】北京黄埔开发区开创大道电商仓库库库库库</a>
+						</div>
+						<div class="wareh-center clearfix">
+							<span class="wareh-l">面积<i>2000</i>m²</span>
+							<span class="wareh-r"><i>33.50</i>元/m²（月）</span>
+						</div>
+						<div class="wareh-bottom clearfix">
+							<span class="wareh-l">广东-北京市-黄浦区</span>
+							<span class="wareh-r">2017-01-01</span>
+						</div>
+					</div>
+					<div class="wareh-item">
+						<div class="wareh-top">
+							<a href="#">【北京市】北京黄埔开发区开创大道电商仓库库库库库</a>
+						</div>
+						<div class="wareh-center clearfix">
+							<span class="wareh-l">面积<i>2000</i>m²</span>
+							<span class="wareh-r"><i>33.50</i>元/m²（月）</span>
+						</div>
+						<div class="wareh-bottom clearfix">
+							<span class="wareh-l">广东-北京市-黄浦区</span>
+							<span class="wareh-r">2017-01-01</span>
+						</div>
+					</div>
+					<div class="wareh-item">
+						<div class="wareh-top">
+							<a href="#">【北京市】北京黄埔开发区开创大道电商仓库库库库库</a>
+						</div>
+						<div class="wareh-center clearfix">
+							<span class="wareh-l">面积<i>2000</i>m²</span>
+							<span class="wareh-r"><i>33.50</i>元/m²（月）</span>
+						</div>
+						<div class="wareh-bottom clearfix">
+							<span class="wareh-l">广东-北京市-黄浦区</span>
+							<span class="wareh-r">2017-01-01</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9 pro-right pro-right-t">
+				<div class="warehouse-des warehouse-des-t row">
+					<div class="des-list col-md-4">
+						<div class="img-box">
+							<img src="../Public/images/index/pro.jpg" alt="">
+							<span class="layer">
+								<i>北京顺义李桥优质仓库出租</i>
+								<i class="site">北京市</i>
+							</span>
+						</div>
+						<div class="txt-box">
+							<span class="type">普通舱</span>
+							<span class="fee"><i>33.50</i>元/m²（月）</span>
+						</div>
+					</div>
+					<div class="des-list col-md-4">
+						<div class="img-box">
+							<img src="../Public/images/index/pro.jpg" alt="">
+							<span class="layer">
+								<i>北京顺义李桥优质仓库出租</i>
+								<i class="site">北京市</i>
+							</span>
+						</div>
+						<div class="txt-box">
+							<span class="type">普通舱</span>
+							<span class="fee"><i>33.50</i>元/m²（月）</span>
+						</div>
+					</div>
+					<div class="des-list col-md-4">
+						<div class="img-box">
+							<img src="../Public/images/index/pro.jpg" alt="">
+							<span class="layer">
+								<i>北京顺义李桥优质仓库出租</i>
+								<i class="site">北京市</i>
+							</span>
+						</div>
+						<div class="txt-box">
+							<span class="type">普通舱</span>
+							<span class="fee"><i>33.50</i>元/m²（月）</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-9 pro-right pro-right-b">
+				<div class="warehouse-des warehouse-des-b row">
+					<div class="des-list col-md-4">
+						<div class="img-box">
+							<img src="../Public/images/index/pro.jpg" alt="">
+							<span class="layer">
+								<i>北京顺义李桥优质仓库出租</i>
+								<i class="site">北京市</i>
+							</span>
+						</div>
+						<div class="txt-box">
+							<span class="type">普通舱</span>
+							<span class="fee"><i>33.50</i>元/m²（月）</span>
+						</div>
+					</div>
+					<div class="des-list col-md-4">
+						<div class="img-box">
+							<img src="../Public/images/index/pro.jpg" alt="">
+							<span class="layer">
+								<i>北京顺义李桥优质仓库出租</i>
+								<i class="site">北京市</i>
+							</span>
+						</div>
+						<div class="txt-box">
+							<span class="type">普通舱</span>
+							<span class="fee"><i>33.50</i>元/m²（月）</span>
+						</div>
+					</div>
+					<div class="des-list col-md-4">
+						<div class="img-box">
+							<img src="../Public/images/index/pro.jpg" alt="">
+							<span class="layer">
+								<i>北京顺义李桥优质仓库出租</i>
+								<i class="site">北京市</i>
+							</span>
+						</div>
+						<div class="txt-box">
+							<span class="type">普通舱</span>
+							<span class="fee"><i>33.50</i>元/m²（月）</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--  仓配一体 -->
+	<div class="container content-box">
+		<h1>仓配一体</h1>
+		<div class="pro2-box row">
+			<div class="col-md-3 pro-left">
+				<div class="pro-title">
+					<div class="pro-tp">
+						<img src="../Public/images/index/shuzicangguan.png" alt="" style="padding-right: 10px;border-right:1px solid #e5e5e5;">
+						<img src="../Public/images/index/gongtongcangpei.png" alt="" style="padding-left: 5px;">	
+					</div>
+					<div class="pro-tb">
+						<img src="../Public/images/index/cangpeiyiti.png" alt="">
+					</div>
+				</div>
+				<div class="pro-cont">
+					<ul>
+						<li><span>极速开仓 统一管理</span></li>
+						<li><span>专业系统 数字管控</span></li>
+						<li><span>一站对接 仓配全国</span></li>
+						<li><span>多样选择 透明服务</span></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-6 pro-middle">
+				<div class="img-box">
+					<img src="../Public/images/index/bj.png" alt="">
+					<div class="layer-top">
+						<p class="num">2000m²</p>
+						<p class="title">运营面积</p>
+						<span>北京市</span>
+					</div>
+					<div class="layer-bottom">
+						<table class="table table-bordered">
+							<tbody>
+								<tr>
+									<td rowspan="2" style="width: 60px;height: 96px;">服务项目</td>
+									<td>仓储系统</td>
+									<td>装卸货</td>
+									<td>入库理货</td>
+									<td>订单操作（B2B/B2C）</td>
+									<td>退换货</td>
+								</tr>
+								<tr>
+									<td>更换包装</td>
+									<td>条码打印</td>
+									<td>盘点</td>
+									<td>快递</td>
+									<td>物流</td>
+								</tr>								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3 pro-right">
+				<div class="img-box">
+					<img src="../Public/images/index/sh.png" alt="">
+					<div class="layer">
+						<p>即将开通</p>
+						<span>上海市</span>
+					</div>
+				</div>
+				<div class="img-box" style="margin-top: 9px;margin-bottom: 9px;">
+					<img src="../Public/images/index/tj.png" alt="">
+					<div class="layer">
+						<p>即将开通</p>
+						<span>天津市</span>
+					</div>
+				</div>
+				<div class="img-box">
+					<img src="../Public/images/index/hz.png" alt="">
+					<div class="layer">
+						<p>即将开通</p>
+						<span>杭州市</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--  云仓技术 -->
+	<div class="container content-box">
+		<h1>云仓技术</h1>
+		<div class="pro3-box row">
+			<div class="col-md-3 pro-left">
+				<h2>智能仓库管理</h2>
+				<div class="pro-cont">
+					<ul class="list-inline">
+						<li><span>批次入库</span></li>
+						<li><span>波次出库</span></li>
+						<li><span>精细库管</span></li>
+						<li><span>灵活盘点</span></li>
+						<li><span>条码管理</span></li>
+						<li><span>PDA支持</span></li>
+						<li><span>平板拣货</span></li>
+						<li><span>库存预警</span></li>
+					</ul>
+
+				</div>
+			</div>
+			<div class="col-md-9 pro-right">
+				<div class="img-des row">
+					<div class="col-md-4 img-box">
+						<img src="../Public/images/index/pro.jpg" alt="">
+						<div class="layer">
+							<span>双模式，自适应</span>
+						</div>
+						<div class="layer-bg">
+							<span>能上网，你的仓库就能用上WMS。个人电脑、移动PDA双模式自动适应，有多少库管理多少库。<span>
+						</div>
+					</div>
+					<div class="col-md-4 img-box" style="margin-left: 10px;margin-right: 10px;">
+						<img src="../Public/images/index/pro.jpg" alt="">
+						<div class="layer">
+							<span>快速上手</span>
+						</div>
+						<div class="layer-bg">
+							<span>不用培训也能上手，每个仓管都可以成为WMS专家。方便的业务设置，灵活的数据管理，让仓库数据活起来。<span>
+						</div>
+					</div>
+					<div class="col-md-4 img-box">
+						<img src="../Public/images/index/pro.jpg" alt="">
+						<div class="layer">
+							<span>平价收费</span>
+						</div>
+						<div class="layer-bg">
+							<span>平价收费，以普及WMS到每个仓库为使命。项目定制，专属咨询服务，满足您的实际业务需求。</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- footer部分 -->
+	<div class="footer-fixed">
+		<div class="foot foot-wrapper">
+			<div class="container foot-des">
+				<div class="row">
+					<div class="col-md-3 part-des">
+						<div class="part-icon icon1"></div>
+						<div class="part-txt">
+							<h1>低价采购</h1>
+							<p>全国海量供应信息</p>	
+						</div>
+					</div>
+					<div class="col-md-3 part-des">
+						<div class="part-icon icon2"></div>
+						<div class="part-txt">
+							<h1>品种齐全</h1>
+							<p>实时更新产品库</p>
+						</div>
+					</div>
+					<div class="col-md-3 part-des">
+						<div class="part-icon icon3"></div>
+						<div class="part-txt">
+							<h1>正品行货</h1>
+							<p>产品及授权专业链条把控</p>	
+						</div>
+					</div>
+					<div class="col-md-3 part-des">
+						<div class="part-icon icon4"></div>
+						<div class="part-txt">
+							<h1>安全交易</h1>
+							<p>可靠的三方交易模式</p>	
+						</div>
+					</div>
+				</div>
+			</div>		
+			<div class="container clearfix">
+				<div class="row">
+					<div class="foot-about col-md-2">
+						<h1>常见问题</h1>
+						<ul class="list-unstyled">
+							<li><a href="#">注册流程</a></li>
+							<li><a href="#">修改密码</a></li>
+						</ul>
+					</div>
+					<div class="foot-about col-md-2">
+						<h1>交易指南</h1>
+						<ul class="list-unstyled">
+							<li><a href="#">购物指南</a></li>
+							<li><a href="#">付款方式</a></li>
+							<li><a href="#">配送方式</a></li>
+						</ul>
+					</div>
+					<div class="foot-about col-md-2">
+						<h1>我是供应商</h1>
+						<ul class="list-unstyled">
+							<li><a href="#">加入供应商</a></li>
+							<li><a href="#">供应商优势</a></li>
+						</ul>
+					</div>
+					<div class="foot-about col-md-2">
+						<h1>我是采购商</h1>
+						<ul class="list-unstyled">
+							<li><a href="#">加入采购商</a></li>
+							<li><a href="#">采购商优势</a></li>
+						</ul>
+					</div>
+					<div class="col-md-1 devider-blank"></div>
+					<div class="foot-qrcode col-md-3">
+						<ul class="list-inline">
+							<li class="weibo">
+								<img src="../Public/images/footer/public.png" alt="" />
+								<span class="weixin">微信公众号</span>
+							</li>
+							<li class="weibo">
+								<img src="../Public/images/footer/APP.png" alt="" />
+								<span class="weibo">下载APP</span>					
+							</li>
+						</ul>					
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot-copyright text-center">
+			<p class="notice">
+				Copyright ©2017 易电联 All Rights Reserved&nbsp;&nbsp;&nbsp;&nbsp;备案号：京ICP备16009982<br />
+				公司：易电联（北京）电子商务有限公司&nbsp;&nbsp;&nbsp;&nbsp;地址：北京市朝阳区惠河南街1106号源创空间大厦二层212-213室<br>
+			</p>
+		</div>
+	</div>
+	<style>
+	body {background-color: #fff;}
+	.b1{
+		background-image: url(../Public/images/index/banner.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 100%;
+		height: 380px;
+		overflow:hidden;
+	}
+	.b2{
+		background-image: url(../Public/images/index/banner2.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 100%;
+		height: 380px;
+		overflow:hidden;
+	}
+	.carousel-indicators li {
+		background:transparent url(../Public/images/index/lunbobtn.png) no-repeat;
+		width: 26px;
+		height: 4px;
+		margin:0;
+		margin-right: 5px;
+		margin-left: 5px;
+		border:0;
+		border-radius: 0;
+	}
+	.carousel-indicators li.active {
+		background:transparent url(../Public/images/index/lunbobtn2.png) no-repeat;
+		width: 26px;
+		height: 4px;		
+	}
+	.carousel-inner {border-bottom: 1px solid #e5e5e5;}
+</style>
+
+<script>
+	$(function(){
+		var eOffset = $(".footer-fixed").offset().top;
+		var eleH1 = eOffset + $(".footer-fixed").height();
+		var viewH = document.documentElement.clientHeight;
+		if (eleH1 < viewH) {
+			$(".footer-fixed").addClass("f-fixed");
+		} else {
+			$(".footer-fixed").removeClass("f-fixed");
+		}    
+	})
+</script>
+</body>
+</html>

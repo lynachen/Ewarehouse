@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="renderer" content="webkit|ie-comp|ie-stand" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<link rel="shortcut icon" href="../Public/images/index/logo.ico" type="image/x-icon" />
+	<title>预约看仓弹框</title>
+	<link rel="stylesheet" href="../Public/components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Public/components/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../Public/components/datepicker/css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" href="../Public/components/toastr/toastr.min.css">
+	<link rel="stylesheet" href="../Public/css/index.css">
+	<link rel="stylesheet" href="../Public/css/colorbox.css">
+	<script src="../Public/components/jQuery/dist/jquery.min.js"></script>
+	<script src="../Public/components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../Public/components/validate/jquery.validate.min.js"></script>
+	<script src="../Public/components/dialog/js/bootstrap-dialog.min.js"></script>
+	<script src="../Public/components/toastr/toastr.min.js"></script>
+	<script src="../Public/js/base.js"></script>
+	<script src="../Public/js/colorbox.js"></script>
+</head>
+<body>
+	<div class="apply-order">
+			<form action="javascript:;" method="post" class="form-order" id="formOrder" name="formOrder" >
+				<div class="order-item"> 
+					<label for="warehouse">预约仓库</label>
+					<span>大兴区物流园标准高台库出租</span>						
+				</div>
+				<div class="order-item">   
+					<label for="size">需求面积</label>
+					<input type="text" placeholder="" id="size">m²							
+				</div>	
+				<div class="order-item"> 
+					<label for="name">联系人</label>
+					<input type="text" placeholder="" id="name">							
+				</div>
+				<div class="order-item"> 
+					<label for="mobile">联系电话</label>
+					<input type="text" placeholder="" id="mobile">							
+				</div>
+				<div class="order-item btn-area">
+						<button type="submit" class="btn btn-primary btn-order" id="btnOrder" onclick="applyOrder()">预约看仓</button>
+						<p>24小时内将有客服处理您的预约</p>				
+				</div>
+			</form>
+	</div>
+
+<script>
+function applyOrder() {
+    var size = $.trim($("#size").val());
+    var name= $.trim($("#name").val());
+    var mobile = $.trim($("#mobile").val());
+    /*正则检验手机号*/
+			var reg = /^1[3|4|5|7|8][0-9]{9}$/;  //验证规则
+			var flag = reg.test(mobile);  //true
+    if (size == '') {
+        toastr.error('请输入需要的仓库面积！');
+        return false;
+    } else if(name == '') {
+        toastr.error('请输入联系人！');
+        return false;
+    }else if(name.length < 2){
+        toastr.error('姓名至少两个字！');
+        return false;
+    }
+    else if (mobile == '') {
+        toastr.error('请输入手机号！');
+        return false;
+    } else if (!flag) {
+        toastr.error('请输入正确的手机号！');
+        return false;
+    } else {
+        /*AJAX提交数据*/
+        var data = {
+        	size:size,
+            name: name,
+            mobile: mobile
+        };
+        $.post(url.finance,data,function(ret){
+            if(ret.Status){
+                toastr.success('您的预约提交成功，我们将稍后联系您。');
+                setTimeout(function(){
+                    window.location.reload();
+                },700)
+            }
+            else{
+                toastr.error('系统出错，请稍后再试');
+            }
+        })
+    }
+}
+
+</script>	
+</body>
+</html>
