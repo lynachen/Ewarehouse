@@ -1,5 +1,5 @@
 toastr.options = {
-    "closeButton": true,
+    // "closeButton": true,
     "debug": false,
     "progressBar": false,
     "preventDuplicates": false,

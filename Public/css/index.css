@@ -73,14 +73,16 @@
 	    .list-inline > li {padding-right: 0;padding-left: 0;}
 	    /*更改插件toastr字体大小*/
 	    .toast-message{
-	    	font-size: .3rem;
-	    	color: #ffffff;
+	    	font-size: 14px;
+	    	color: #fff;
 	    	text-align: center;
 	    }
 	    .toast-top-full-width {
 	    	top: 45%;
-	    	right: 0;
-	    	width: 100%;
+	    	right: 50%;
+	    	width: 290px;
+	    	height: 24px;
+	    	line-height: 24px;
 	    }
 	    .toast-error,.toast-success{
 	    	background-color: #030303;
@@ -1370,9 +1372,7 @@
 
 	/*预约看仓弹框*/
 	.apply-order {
-		width: 460px;
-    padding-left: 40px;
-    padding-right: 40px;
+		width: 430px;
 	}
 	.apply-order .form-order .order-item {
 		margin-bottom: 15px;
@@ -1390,7 +1390,7 @@
 		width: 220px;
 		height: 30px;
 		font-size: 14px;
-		color: #ccc;
+		color: #666;
 		border:1px solid #ccc;
 		margin-right: 5px;
 	}
@@ -1406,7 +1406,8 @@
 		color: #fff;
 		background-color: #1a75ff;
 		border-color: transparent;
+		border-radius: 0;
 		margin-bottom: 14px;
 	}
-	.apply-order .form-order .btn-area {width: 291px;}
+	.apply-order .form-order .btn-area {width: 291px;margin-left: 50px;}
 	.apply-order .form-order .btn-area p {text-align: center;}
