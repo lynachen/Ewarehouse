@@ -147,6 +147,7 @@
 		</div>
 	</div>
 	<div class="container">
+		<div class="outer-wrapper row">
 			<!-- 视图窗 -->
 			<div class="preview-box col-md-8">
 				<div class="preview-wrap" id="magnifyingGlass">
@@ -319,63 +320,66 @@
 					</div>
 				</div>
 			</div>
-			<div class="prodetail-box col-md-4">
-				<div class="prodetail">
-					<div class="item item1">仓库编号：<i>CNS2900527866</i></div>
-					<div class="item item2">北京市-大兴区高米店</div>
-					<div class="item item3">
-						<table>
-							<tbody>
-								<tr>
-									<th>1元/m²(天)</th>
-									<th>0.9元/m²(天)</th>
-									<th>0.8元/m²(天)</th>
-								</tr>
-								<tr>
-									<td>按月付费</td>
-									<td>按半年付费</td>
-									<td>按年付费</td>
-								</tr>
-							</tbody>
-						</table>
+			<div class="outer-prodetail-box">
+				<div class="prodetail-box col-md-4">
+					<div class="prodetail">
+						<div class="item item1">仓库编号：<i>CNS2900527866</i></div>
+						<div class="item item2">北京市-大兴区高米店</div>
+						<div class="item item3">
+							<table>
+								<tbody>
+									<tr>
+										<th>1元/m²(天)</th>
+										<th>0.9元/m²(天)</th>
+										<th>0.8元/m²(天)</th>
+									</tr>
+									<tr>
+										<td>按月付费</td>
+										<td>按半年付费</td>
+										<td>按年付费</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="item item4">
+							<ul class="list-inline">
+								<li>
+									<span>仓库面积<i>6000m²</i></span>
+								</li>
+								<li>
+									<span>仓库类型<i>普通仓</i></span>
+								</li>
+								<li>
+									<span>可租面积<i>1500m²</i></span>
+								</li>
+								<li>
+									<span>仓库模式<i>高台库</i></span>
+								</li>
+								<li>
+									<span>起租面积<i>2000m²</i></span>
+								</li>
+								<li>
+									<span>仓库地坪<i>混凝土</i></span>
+								</li>
+								<li>
+									<span>底层承重<i>500吨/m²</i></span>
+								</li>
+							</ul>
+						</div>
+						<div class="item item5">
+							<a href="#" class="btn btn-order">预约看仓</a>
+						</div>
+						<div class="item item6">
+							<h2>仓库简介</h2>
+							<p>
+								仓库面积：29000平；仓库结构：钢结构，下部砖墙，上部彩钢板；仓库净高：11米；地面：环氧地面；消防设施：灭火器、消防栓；库房采光：窗户、雾灯采光；仓库面积：29000平；仓库结构：钢结构，下部砖墙，上部彩钢板；仓库净高：11米；地面：环氧地面；消防设施：灭火器、消防栓；库房采光：窗户、雾灯采光
+							</p>
+						</div>
 					</div>
-					<div class="item item4">
-						<ul class="list-inline">
-							<li>
-								<span>仓库面积<i>6000m²</i></span>
-							</li>
-							<li>
-								<span>仓库类型<i>普通仓</i></span>
-							</li>
-							<li>
-								<span>可租面积<i>1500m²</i></span>
-							</li>
-							<li>
-								<span>仓库模式<i>高台库</i></span>
-							</li>
-							<li>
-								<span>起租面积<i>2000m²</i></span>
-							</li>
-							<li>
-								<span>仓库地坪<i>混凝土</i></span>
-							</li>
-							<li>
-								<span>底层承重<i>500吨/m²</i></span>
-							</li>
-						</ul>
-					</div>
-					<div class="item item5">
-						<a href="#" class="btn btn-order">预约看仓</a>
-					</div>
-					<div class="item item6">
-						<h2>仓库简介</h2>
-						<p>
-							仓库面积：29000平；仓库结构：钢结构，下部砖墙，上部彩钢板；仓库净高：11米；地面：环氧地面；消防设施：灭火器、消防栓；库房采光：窗户、雾灯采光；仓库面积：29000平；仓库结构：钢结构，下部砖墙，上部彩钢板；仓库净高：11米；地面：环氧地面；消防设施：灭火器、消防栓；库房采光：窗户、雾灯采光
-						</p>
-					</div>
-				</div>
 
+				</div>
 			</div>
+		</div>
 	</div>
 
 
@@ -388,7 +392,7 @@
 		BootstrapDialog.show({
 			title: "预约看仓",
 			type: BootstrapDialog.TYPE_WARNING,
-			message: $('<div></div>').load("ordermodal.html")
+			message: $('<div></div>').load("applyOrder.html")
 		});
 	});
 </script>
