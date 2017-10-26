@@ -157,15 +157,31 @@
 					<div class="preview-wrapIMg">
 						<!-- 正常显示的图片-->
 						<img src="../Public/images/detail/big_1.jpg">
+						<div class="txt-layer">仓库正面图</div>
 					</div>
 
 					<ul class="preview-wrap-ImgList list-inline">
 						<!-- 图片显示列表 -->
-						<li class="active"><img src="../Public/images/detail/small_1.jpg" data-bigimg="../Public/images/detail/big_1.jpg" alt="b1"></li>
-						<li><img src="../Public/images/detail/small_2.jpg" data-bigimg="../Public/images/detail/big_2.jpg" alt="b2"></li>
-						<li><img src="../Public/images/detail/small_1.jpg" data-bigimg="../Public/images/detail/big_1.jpg" alt="b3"></li>
-						<li><img src="../Public/images/detail/small_2.jpg" data-bigimg="../Public/images/detail/big_2.jpg" alt="b4"></li>
-						<li><img src="../Public/images/detail/small_1.jpg" data-bigimg="../Public/images/detail/big_1.jpg" alt="b5"></li>
+						<li class="active">
+							<img src="../Public/images/detail/small_1.jpg" data-bigimg="../Public/images/detail/big_1.jpg" alt="b1">
+							<div class="img-layer">仓库正面图</div>
+						</li>
+						<li>
+							<img src="../Public/images/detail/small_2.jpg" data-bigimg="../Public/images/detail/big_2.jpg" alt="b2">
+							<div class="img-layer">园区平面图</div>
+						</li>
+						<li>
+							<img src="../Public/images/detail/small_1.jpg" data-bigimg="../Public/images/detail/big_1.jpg" alt="b3">
+							<div class="img-layer">月台图</div>
+						</li>
+						<li>
+							<img src="../Public/images/detail/small_2.jpg" data-bigimg="../Public/images/detail/big_2.jpg" alt="b4">
+							<div class="img-layer">库内图</div>
+						</li>
+						<li>
+							<img src="../Public/images/detail/small_1.jpg" data-bigimg="../Public/images/detail/big_1.jpg" alt="b5">
+							<div class="img-layer">库内设施</div>
+						</li>
 					</ul>
 					<div class="preview-footer">
 						特别提醒：易电联云仓找仓库是免费的，如有人以易电联云仓的名义收费，请确认其身份，并拨打电话xxxxx举报。
@@ -296,32 +312,11 @@
 					<div class="detail-box">
 						<h1>仓储地图</h1>
 						<div class="detail-cont">
-							<table class="table table-bordered">
-								<tbody>
-									<tr>
-										<th>水电网</th>
-										<td>通水通电（220V） 通网通电（380V）</td>
-									</tr>
-									<tr>
-										<th>装卸设备</th>
-										<td>月台 月台卸货升降平台</td>
-									</tr>
-									<tr>
-										<th>作业设置</th>
-										<td>地磅 地磅 地磅 地磅</td>
-									</tr>
-									<tr>
-										<th>辅助设备</th>
-										<td>办公室 食堂 住宿</td>
-									</tr>
-								</tbody>
-							</table>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="outer-prodetail-box">
-				<div class="prodetail-box col-md-4">
+			<div class="prodetail-box col-md-4">
 					<div class="prodetail">
 						<div class="item item1">仓库编号：<i>CNS2900527866</i></div>
 						<div class="item item2">北京市-大兴区高米店</div>
@@ -377,7 +372,6 @@
 						</div>
 					</div>
 
-				</div>
 			</div>
 		</div>
 	</div>
@@ -395,6 +389,16 @@
 			message: $('<div></div>').load("applyOrder.html")
 		});
 	});
+	$(function(){
+		var proTop = $(".prodetail-box").offset().top;
+		$(window).scroll(function(){
+			if($(window).scrollTop() > proTop){
+				$(".prodetail-box").addClass("pro-fixed");
+			} else {
+				$(".prodetail-box").removeClass("pro-fixed");
+			}
+		});
+	})
 </script>
 </body>
 </html>

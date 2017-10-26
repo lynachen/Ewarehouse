@@ -28,12 +28,23 @@
 	text-align: center;
 	/*margin-top: 20px;*/
 	margin-bottom: 20px;
+	position: relative;
+	margin-left: 10px;
+	margin-right: 10px;
 }
 .preview-wrapIMg > img{
 /*	width: 100%;
 height:100%*/
 width: 780px;
 height: 520px;
+}
+.preview-wrapIMg .txt-layer {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background-color: rgba(0,0,0,.4);
+	border:1px solid rgba(255,255,255,.4);
+	padding:5px;
 }
 /*滑块*/
 .magnifyingBegin{
@@ -78,15 +89,27 @@ height: 520px;
 	border: 1px solid #e5e5e5;
 	text-align: center;
 	margin-left: 10px;
+	position: relative;
 }
-
 .preview-wrap-ImgList > li > img{
 	vertical-align:top;
 	display:inline-block;
 	width:120px;
 	height:80px;
-	padding:2px;
+	margin:2px;
 }
+.preview-wrap-ImgList > li .img-layer {
+	position: absolute;
+	width: 120px;
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	color: #fff;
+	top: 2px;
+	left:2px;
+	background-color: rgba(0,0,0,.5);
+}
+.preview-wrap-ImgList > li:first-child .img-layer {display: none;}
 .preview-wrap-ImgList > .active{
 	border-color:#1a75ff;
 }

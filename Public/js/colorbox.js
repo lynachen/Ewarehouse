@@ -6,7 +6,7 @@ $(function(){
 		   $Drag = $this.find('.magnifyingBegin'),//拖动滑动容器
 		   $show = $this.find('.magnifyingShow'),//放大镜显示区域
 		$showIMg = $show.find('img'),//放大镜图片
-		$ImgList = $this.find('.preview-wrap-ImgList > li >img'),
+		$ImgList = $this.find('.preview-wrap-ImgList > li'),
 		multiple = $show.width()/$Drag.width();
 
 		$imgCon.mousemove(function(e){
@@ -45,9 +45,33 @@ $(function(){
 		});
 
 		$ImgList.hover(function(){
-			var NowSrc = $(this).data('bigimg');
+			var listOne = $(".preview-wrap-ImgList > li:first-child");
+			var listTwo = $(".preview-wrap-ImgList > li:nth-child(2)");
+			var listThree = $(".preview-wrap-ImgList > li:nth-child(3)");
+			var listFour = $(".preview-wrap-ImgList > li:nth-child(4)");
+			var listFive = $(".preview-wrap-ImgList > li:last-child");	
+			var txtLayer = $(this).parents(".preview-wrap-ImgList").siblings(".preview-wrapIMg").find(".txt-layer");		
+			var NowSrc = $(this).find("img").data('bigimg');
 			$Img.attr('src',NowSrc);
-			$(this).parent().addClass('active').siblings().removeClass('active');
+			$(this).addClass('active').siblings().removeClass('active');
+			$(this).find(".img-layer").hide();
+			$(this).siblings().find(".img-layer").show();
+
+			if(listOne.hasClass("active")){
+				txtLayer.text("仓库正面图");
+			};
+			if(listTwo.hasClass("active")){
+				txtLayer.text("园区平面图");
+			};
+			if(listThree.hasClass("active")){
+				txtLayer.text("月台图");
+			};
+			if(listFour.hasClass("active")){
+				txtLayer.text("库内图");
+			};
+			if(listFive.hasClass("active")){
+				txtLayer.text("库内设施");
+			};
 		});	
 	}
 

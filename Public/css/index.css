@@ -1306,8 +1306,11 @@
 		margin-left: 10px;
 		border:1px solid #e5e5e5;
 		padding-top: 20px;
-		/*position: fixed;
-		margin-left: 818px;*/
+	}
+	.prodetail-box.pro-fixed {
+		position: fixed;
+		margin-left: 818px;
+		top: 0;
 	}
 	.prodetail-box .item {
 		font-size: 14px;
