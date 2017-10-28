@@ -10,100 +10,161 @@
 	<link rel="shortcut icon" href="../Public/images/index/logo.ico" type="image/x-icon" />
 	<title>预约看仓弹框</title>
 	<link rel="stylesheet" href="../Public/components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../Public/components/dialog/css/bootstrap-dialog.min.css">
 	<link rel="stylesheet" href="../Public/components/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="../Public/components/datepicker/css/bootstrap-datetimepicker.min.css">
-	<link rel="stylesheet" href="../Public/components/toastr/toastr.min.css">
 	<link rel="stylesheet" href="../Public/css/index.css">
-	<link rel="stylesheet" href="../Public/css/colorbox.css">
 	<script src="../Public/components/jQuery/dist/jquery.min.js"></script>
 	<script src="../Public/components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="../Public/components/validate/jquery.validate.min.js"></script>
 	<script src="../Public/components/dialog/js/bootstrap-dialog.min.js"></script>
-	<script src="../Public/components/toastr/toastr.min.js"></script>
 	<script src="../Public/js/base.js"></script>
-	<script src="../Public/js/colorbox.js"></script>
 </head>
 <body>
 	<div class="apply-order">
-			<form action="javascript:;" method="post" class="form-order" id="formOrder" name="formOrder" >
-				<div class="order-item"> 
-					<label for="warehouse">预约仓库</label>
-					<span>大兴区物流园标准高台库出租</span>						
-				</div>
-				<div class="order-item">   
-					<label for="size">需求面积</label>
-					<input type="text" placeholder="" id="size">m²							
-				</div>	
-				<div class="order-item"> 
-					<label for="name">联系人</label>
-					<input type="text" placeholder="" id="name">							
-				</div>
-				<div class="order-item"> 
-					<label for="mobile">联系电话</label>
-					<input type="text" placeholder="" id="mobile">							
-				</div>
-				<div class="order-item btn-area">
-						<button type="submit" class="btn btn-primary btn-order" id="btnOrder" onclick="applyOrder()">预约看仓</button>
-						<p>24小时内将有客服处理您的预约</p>				
-				</div>
-			</form>
+		<form name="form" role="form" action="javascript:;" method="post" class="order-form" id="orderForm" novalidate="novalidate">	
+			<div class="order-item"> 
+				<label for="warehouse">预约仓库</label>
+				<span>大兴区物流园标准高台库出租</span>						
+			</div>
+			<div class="order-item">   
+				<label for="size">需求面积</label>
+				<input type="text" placeholder="" name="size" id="size">m²							
+			</div>	
+			<div class="order-item"> 
+				<label for="name">联系人</label>
+				<input type="text" placeholder="" name="name" id="name">							
+			</div>
+			<div class="order-item"> 
+				<label for="mobile">联系电话</label>
+				<input type="text" placeholder="" name="mobile" id="mobile">							
+			</div>
+			<div class="order-item btn-area">
+				<button type="submit" class="btn btn-primary btn-order" id="btnOrder">预约看仓</button>
+				<p>24小时内将有客服处理您的预约</p>				
+			</div>
+		</form>
 	</div>
-<style>
-.modal-content {
-	width: 460px;
-}
-.modal-header{
-	background-color: #f0f0f0;
-    font-size: 14px;
-    color: #666;
-}
-.modal-body {background-color: #fff;}
+	<style>
+	.modal-content {
+		width: 460px;
+	}
+	.modal-header{
+		background-color: #f0f0f0;
+		font-size: 14px;
+		color: #666;
+	}
+	.modal-body {background-color: #fff;}
+	.apply-order {
+		width: 430px;
+	}
+	.apply-order .order-form .order-item {
+		margin-bottom: 25px;
+		position: relative;
+	}
+	.apply-order .order-form label {
+		font-size: 14px;
+		font-weight: 500;
+		color: #999;
+		width: 100px;
+		text-align: right;
+		margin-right: 30px;
+
+	}
+	.apply-order .order-form label.error {
+		position: absolute;
+		color: #ee2222;
+		font-weight: 500;
+		text-align: left;
+		left: 135px;
+		bottom: -25px;
+		width: 200px;
+	}
+	.apply-order .order-form input {
+		width: 220px;
+		height: 30px;
+		font-size: 14px;
+		color: #666;
+		border:1px solid #ccc;
+		margin-right: 5px;
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.apply-order .order-form span {
+		font-size: 14px;
+	}
+	.apply-order .order-form .btn-order {
+		width: 291px;
+		height: 44px;
+		line-height: 44px;
+		padding:0;
+		font-size: 16px;
+		color: #fff;
+		background-color: #1a75ff;
+		border-color: transparent;
+		border-radius: 0;
+		margin-bottom: 14px;
+	}
+	.apply-order .order-form .btn-area {width: 291px;margin-left: 50px;}
+	.apply-order .order-form .btn-area p {text-align: center;}
 </style>
 <script>
-function applyOrder() {
-    var size = $.trim($("#size").val());
-    var name= $.trim($("#name").val());
-    var mobile = $.trim($("#mobile").val());
-    /*正则检验手机号*/
-			var reg = /^1[3|4|5|7|8][0-9]{9}$/;  //验证规则
-			var flag = reg.test(mobile);  //true
-    if (size == '') {
-        toastr.error('请输入需要的仓库面积！');
-        return false;
-    } else if(name == '') {
-        toastr.error('请输入联系人！');
-        return false;
-    }else if(name.length < 2){
-        toastr.error('姓名至少两个字！');
-        return false;
-    }
-    else if (mobile == '') {
-        toastr.error('请输入手机号！');
-        return false;
-    } else if (!flag) {
-        toastr.error('请输入正确的手机号！');
-        return false;
-    } else {
-        /*AJAX提交数据*/
-        var data = {
-        	size:size,
-            name: name,
-            mobile: mobile
-        };
-        $.post(url.finance,data,function(ret){
-            if(ret.Status){
-                toastr.success('您的预约提交成功，我们将稍后联系您。');
-                setTimeout(function(){
-                    window.location.reload();
-                },700)
-            }
-            else{
-                toastr.error('系统出错，请稍后再试');
-            }
-        })
-    }
-}
-
+	var token = '{$token}';
+	$(function(){
+		$("#orderForm").validate({
+				// onkeyup:false,
+				rules: {
+					size:{
+						required:true
+					},
+					name:{
+						required:true,
+						minlength:2
+					},
+					mobile:{
+						required:true,
+						isValidMobile: true
+					}
+				},
+				messages:{
+					size:{
+						required:'请输入您需要的仓库面积！'
+					},
+					name:{
+						required:'请输入您的姓名',
+						minlength:'姓名至少两个字'
+					},
+					mobile:{
+						required:'请输入您的手机号码',
+						isValidMobile:'请输入正确的手机号码'
+					}
+				},
+				errorPlacement: function (error, element, params) {
+					error.appendTo(element.parent('div'));
+				},
+				submitHandler: function (form) {
+					$("#btnOrder").prop('disabled',true);
+					var obj = {};
+					obj.size = $.trim($("#size").val());
+					obj.name = $.trim($("#name").val());
+					obj.mobile = $.trim($("#mobile").val());
+					obj.token = token;
+					$.post("",obj,function(ret){
+						if(ret.status==0){
+							alt(ret.error,function(){
+								$("#btnOrder").prop('disabled',false);
+							});
+						}
+						else{
+							$("#btnOrder").text(ret.data);
+							setTimeout(function(){
+								window.location.href = $("").val();
+							},500);
+						}
+					});
+					return false;
+				}
+			});
+	})
 </script>	
 </body>
 </html>

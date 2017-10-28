@@ -1,19 +1,4 @@
-toastr.options = {
-    // "closeButton": true,
-    "debug": false,
-    "progressBar": false,
-    "preventDuplicates": false,
-    "positionClass": "toast-top-full-width",
-    "onclick": null,
-    "showDuration": "400",
-    "hideDuration": "1000",
-    "timeOut": "3000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-};
+
 // -----------------------------------------------------------top---------------------------------------------
 $(function(){
     $(".top-right li").hover(function(){

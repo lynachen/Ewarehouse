@@ -824,10 +824,12 @@
 	.breadcrumb .breadcrumb-item,
 	.breadcrumb .breadcrumb-only {
 		display: inline-block;
-		/*border:1px solid #e5e5e5;
-		padding:3px 10px;*/
 	}
-	.breadcrumb .breadcrumb-only {background-color: #f3f3f3;}
+	.breadcrumb .breadcrumb-only {
+		background-color: #f3f3f3;		
+		border:1px solid #ccc;
+		padding:3px 5px;
+	}
 	.breadcrumb .breadcrumb-only:hover {background-color: #fff;}
 	.breadcrumb .breadcrumb-only b {
 		font-weight: 500;
@@ -1286,7 +1288,8 @@
 	}
 
 	/*-----详情页-----*/
-	.preview-box .detail-wrap .detail-box h1{
+	.under-wrapper {width: 808px;}
+	.under-wrapper .detail-wrap .detail-box h1{
 		font-size: 16px;
 		padding-top: 10px;
 		padding-bottom: 10px;
@@ -1398,44 +1401,3 @@
 		margin-top: 10px;
 	}
 
-	/*预约看仓弹框*/
-	.apply-order {
-		width: 430px;
-	}
-	.apply-order .form-order .order-item {
-		margin-bottom: 15px;
-	}
-	.apply-order .form-order label {
-		font-size: 14px;
-		font-weight: 500;
-		color: #999;
-		width: 20%;
-		text-align: right;
-		margin-right: 30px;
-
-	}
-	.apply-order .form-order input {
-		width: 220px;
-		height: 30px;
-		font-size: 14px;
-		color: #666;
-		border:1px solid #ccc;
-		margin-right: 5px;
-	}
-	.apply-order .form-order span {
-		font-size: 14px;
-	}
-	.apply-order .form-order .btn-order {
-		width: 291px;
-		height: 44px;
-		line-height: 44px;
-		padding:0;
-		font-size: 16px;
-		color: #fff;
-		background-color: #1a75ff;
-		border-color: transparent;
-		border-radius: 0;
-		margin-bottom: 14px;
-	}
-	.apply-order .form-order .btn-area {width: 291px;margin-left: 50px;}
-	.apply-order .form-order .btn-area p {text-align: center;}
